@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 15%, #f8e3de, transparent 35%),
+        radial-gradient(circle at 90% 85%, #e5b7b0, transparent 40%),
+        #edc7c0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #3e0b18;
+}
+
+
+#all {
+    width: min(550px, 92vw);
+    height: min(92vh, 850px);
+
+    background: rgba(255, 248, 247, 0.92);
+
+    border-radius: 40px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(80, 35, 40, 0.18),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+#all > div:first-child {
+    padding-left: 15px;
+    padding-right: 150px;
+
+    margin-bottom: 15px;
+
+    flex-shrink: 0;
+}
+
+
+h2 {
+    font-size: clamp(25px, 4vw, 38px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #3d0717;
+
+    white-space: nowrap;
+}
+
+
+h5 {
+    margin-top: 5px;
+
+    font-size: clamp(15px, 2.5vw, 21px);
+
+    font-weight: 400;
+
+    color: #777174;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   SUN / MOON
+========================= */
+
+#all > div:nth-child(2) {
+    position: absolute;
+
+    top: 28px;
+    right: 28px;
+
+    display: flex;
+
+    padding: 3px;
+
+    border-radius: 30px;
+
+    background: #f1d8d4;
+}
+
+
+#all > div:nth-child(2) button {
+    width: 45px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    font-size: 19px;
+
+    color: #775b60;
+
+    cursor: pointer;
+}
+
+
+#sun {
+    background: #f7ccc8 !important;
+
+    color: #4b0b19 !important;
+}
+
+
+#moon:hover {
+    background: #efd0cc;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   DISPLAY
+========================= */
+
+#display {
+    width: 100%;
+
+    height: clamp(100px, 23vh, 190px);
+
+    flex-shrink: 1;
+
+    border: none;
+    outline: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8e1dc,
+            #f3d9d4
+        );
+
+    padding: 20px 25px;
+
+    margin-bottom: 15px;
+
+    text-align: right;
+
+    color: #4b0719;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(32px, 6vw, 58px);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+#button {
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: repeat(5, 1fr);
+
+    gap: 9px;
+}
+
+
+/* Remove BR */
+
+#button br {
+    display: none;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+#button button {
+    min-height: 0;
+
+    border: none;
+
+    border-radius: 23px;
+
+    background: #fffaf9;
+
+    color: #10090b;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(20px, 3.5vw, 32px);
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(75, 30, 35, 0.07),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
+    transition: 0.15s ease;
+}
+
+
+/* Hover */
+
+#button button:hover {
+    background: #fff3f1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Click */
+
+#button button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   AC / +/- / %
+========================= */
+
+#ac,
+#plus-mins,
+#modulo {
+    background: #efc3c0 !important;
+
+    color: #4c0b19 !important;
+}
+
+
+/* =========================
+   OPERATORS
+========================= */
+
+#division,
+#mul,
+#mins,
+#plus {
+    background:
+        linear-gradient(
+            145deg,
+            #df7778,
+            #d76669
+        ) !important;
+
+    color: white !important;
+}
+
+
+/* =========================
+   EQUAL
+========================= */
+
+#equall {
+    background:
+        linear-gradient(
+            145deg,
+            #7e2039,
+            #641329
+        ) !important;
+
+    color: white !important;
+}
+
+
+/* =========================
+   ZERO
+========================= */
+
+#zero {
+    grid-column: span 2;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+body > h3 {
+    width: min(650px, 92vw);
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: clamp(15px, 2.5vw, 22px);
+
+    font-weight: 400;
+
+    color: #74545a;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background:
+        radial-gradient(circle at 20% 20%, #3b2028, transparent 40%),
+        #211519;
+
+    color: white;
+}
+
+
+body.dark-mode #all {
+    background: rgba(47, 29, 34, 0.96);
+}
+
+
+body.dark-mode h2 {
+    color: white;
+}
+
+
+body.dark-mode h5 {
+    color: #b9a8aa;
+}
+
+
+body.dark-mode #display {
+    background: #382329;
+
+    color: white;
+}
+
+
+body.dark-mode #button button {
+    background: #493137;
+
+    color: white;
+}
+
+
+body.dark-mode #button button:hover {
+    background: #573a42;
+}
+
+
+body.dark-mode #ac,
+body.dark-mode #plus-mins,
+body.dark-mode #modulo {
+    background: #6a4149 !important;
+
+    color: white !important;
+}
+
+
+body.dark-mode #all > div:nth-child(2) {
+    background: #3b282d;
+}
+
+
+body.dark-mode #moon {
+    background: #593b43;
+
+    color: white;
+}
+
+
+body.dark-mode > h3 {
+    color: #c5aeb2;
+}
+
